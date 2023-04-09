@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorPrimary"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/ub_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="@string/tv_shows_most_popular"
+                android:textColor="@color/colorTextIcons"
+                android:textSize="20sp"
+                android:layout_marginStart="8dp"/>
+
+            <ImageView
+                android:id="@+id/watchlist"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_round_remove_red_eye_24"
+                app:tint="@color/colorTextIcons" />
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_round_search_24"
+                app:tint="@color/colorTextIcons" />
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="gone"
+            tools:listitem="@layout/item_container_tv_show"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+            >
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/layoutHeader" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
