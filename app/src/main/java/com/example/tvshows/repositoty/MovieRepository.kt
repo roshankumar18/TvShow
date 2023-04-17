@@ -11,10 +11,11 @@ class MovieRepository(private val service : TvApiService) {
     val movie : LiveData<List<TvShowX>>
     get() = movieObject
 
-    suspend fun getMovie(page:Int){
+    suspend fun getMovie(page:Int) : TVShow{
         val response = service.getMovies(page)
         if (response.body()!=null){
             movieObject.postValue(response.body()!!.tv_shows)
         }
+        return response.body()!!
     }
 }
