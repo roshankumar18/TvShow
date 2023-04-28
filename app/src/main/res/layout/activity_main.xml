@@ -63,7 +63,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
             android:padding="8dp"
-            android:visibility="gone"
+
             tools:listitem="@layout/item_container_tv_show"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutHeader"

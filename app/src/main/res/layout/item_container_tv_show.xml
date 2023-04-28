@@ -31,6 +31,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/ub_medium"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageTV"
             app:layout_constraintTop_toTopOf="@id/imageTV" />
