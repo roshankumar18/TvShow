@@ -1,6 +1,6 @@
 package com.example.tvshows.models
 
-data class TvShowX(
+data class TvShowsInfo(
     val country: String,
     val end_date: Any,
     val id: Int,

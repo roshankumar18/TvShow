@@ -1,8 +1,8 @@
 package com.example.tvshows.models
 
-data class TVShow(
+data class TVShows(
     val page: Int,
     val pages: Int,
     val total: String,
-    val tv_shows: List<TvShowX>
+    val tv_shows: List<TvShowsInfo>
 )

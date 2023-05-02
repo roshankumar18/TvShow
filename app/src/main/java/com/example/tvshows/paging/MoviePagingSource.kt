@@ -2,14 +2,13 @@ package com.example.tvshows.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.tvshows.models.TVShow
-import com.example.tvshows.models.TvShowX
+import com.example.tvshows.models.TvShowsInfo
 import com.example.tvshows.network.TvApiService
 
-class MoviePagingSource(val movies : TvApiService) :PagingSource<Int,TvShowX>() {
+class MoviePagingSource(val movies : TvApiService) :PagingSource<Int,TvShowsInfo>() {
 
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TvShowX> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, TvShowsInfo> {
         try {
             val position = params.key ?: 1
             val reponse = movies.getMovies(position)
@@ -23,7 +22,7 @@ class MoviePagingSource(val movies : TvApiService) :PagingSource<Int,TvShowX>() 
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, TvShowX>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, TvShowsInfo>): Int? {
         return state.anchorPosition?.let {
             state.closestPageToPosition(it)?.prevKey?.plus(1)
                 ?:state.closestPageToPosition(it)?.nextKey?.minus(1 )

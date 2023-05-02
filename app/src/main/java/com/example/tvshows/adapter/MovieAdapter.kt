@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tvshows.R
 import com.example.tvshows.databinding.ItemContainerTvShowBinding
-import com.example.tvshows.models.TvShowX
+import com.example.tvshows.models.TvShowsInfo
 
-class MovieAdapter(private val context :Context,private var movie :List<TvShowX>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapter(private val context :Context,private var movie :List<TvShowsInfo>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     private val TAG = "RecyclerView"
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val binding = ItemContainerTvShowBinding.bind(itemView)
@@ -32,7 +32,7 @@ class MovieAdapter(private val context :Context,private var movie :List<TvShowX>
             .into(holder.binding.imageTV)
 
     }
-    fun updateData(newData :List<TvShowX>){
+    fun updateData(newData :List<TvShowsInfo>){
         movie = newData
         notifyDataSetChanged()
     }

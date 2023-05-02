@@ -1,9 +1,7 @@
 package com.example.tvshows.network
 
-import com.example.tvshows.models.TVShow
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
@@ -16,7 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 class NetworkModule {
-    private val URL = "https://www.episodate.com/api/"
+        private val URL = "https://www.episodate.com/api/"
     @Singleton
     @Provides
     fun getRetrofit():Retrofit{
