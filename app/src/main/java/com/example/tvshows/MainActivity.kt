@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() , TvShowsListener{
         setContentView(binding.root)
         binding.progressBar.visibility = View.VISIBLE
         adapter = MoviePagingAdapter(this,this)
-        viewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
+        viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.hasFixedSize()
         binding.recyclerView.adapter = adapter.withLoadStateFooter(LoaderAdapter())
@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() , TvShowsListener{
     override fun onTvShowClicked(tvShowsInfo: TvShowsInfo) {
         val intent = Intent(this,ShowDetailsActivity::class.java)
         intent.putExtra("id",tvShowsInfo.id.toString())
+        intent.putExtra("name",tvShowsInfo.name.toString())
         startActivity(intent)
     }
 

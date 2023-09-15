@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/title"
+            android:fontFamily="@font/ub_bold"
+            android:text="Text"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="13sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/episode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/ub_medium"
+            android:text="Text"
+            android:textSize="12sp"
+            android:textColor="@color/colorTextIcons"/>
+        <TextView
+            android:id="@+id/airDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/ub_regular"
+            android:text="airdate"
+            android:textSize="10sp"
+            android:textColor="@color/colorTextIcons"/>
+    </LinearLayout>
+</layout>

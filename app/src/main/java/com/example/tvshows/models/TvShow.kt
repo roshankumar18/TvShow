@@ -1,5 +1,9 @@
 package com.example.tvshows.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "tvShows")
 data class TvShow(
     val countdown: Any,
     val country: String,
@@ -8,6 +12,7 @@ data class TvShow(
     val end_date: Any,
     val episodes: List<EpisodeInfo>,
     val genres: List<String>,
+    @PrimaryKey
     val id: Int,
     val image_path: String,
     val image_thumbnail_path: String,
